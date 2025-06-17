@@ -8,7 +8,11 @@ const machineChoiceEl = document.querySelector('#machine-choice');
 let humanScoreNumber = 0
 let machineScoreNumber = 0
 
-
+const emojiMap = {
+    rock: '✊',
+    paper: '✋',
+    scissors: '✌️'
+}
 
 const playHuman = (humanChoice) => {
     playTheGame(humanChoice, playMachine())
@@ -22,8 +26,8 @@ const playMachine = () => {
 const playTheGame = (human, machine) => {
 
     console.log('Humano: ' + human + "Maquina: " + machine)
-    humanChoiceEl.innerHTML = human;
-    machineChoiceEl.innerHTML = machine;
+    humanChoiceEl.innerHTML = emojiMap[human];
+    machineChoiceEl.innerHTML = emojiMap[machine];
 
 
     if (human === machine) {
